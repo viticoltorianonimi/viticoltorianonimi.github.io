@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>VITICOLTORI ANONIMI /</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+    <h1 class="typewriter">//////////////////////////////</h1>
+	</div>
+  <script>
+  
+  function animatedloop(j) {
+      const oldText = document.querySelector('.typewriter');
+      oldText.addEventListener('animationend', () => {
+        setTimeout(() => {
+          const vaText = 'VITICOLTORI ANONIMI /';
+          const container = document.querySelector('.container');
+          const newText = document.createElement('vatext');
+          newText.classList.add('typewriter');
+          newText.textContent = vaText;
+
+          const crsr = document.createElement('cursor');
+          const bar = '|';
+          crsr.classList.add('cursor');
+          crsr.textContent = bar;
+          newText.appendChild(crsr);
+          container.removeChild(oldText);
+          container.appendChild(newText);
+
+          j++
+          if (j<5) {
+            animatedloop(j);
+          }
+        }, 3000);
+      });
+    }
+
+
+    let j = 0
+    animatedloop(j);
+  </script>
+
+  </body>
+</html>
+
+

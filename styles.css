@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100vh;
+  width: 85vw;
+  margin-left: 9vw;
+  margin-right: 10vw;
+}
+
+.typewriter {
+  text-align: left;
+  position: relative;
+  font-family: 'va';
+  font-weight: bold;
+  letter-spacing: 0.75vw;
+  font-size: 5.65vw;
+  animation: typing 1s steps(30, end) forwards; 
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.slash {
+  text-align: center;
+  position: relative;
+  font-family: 'va';
+  font-weight: bold;
+  letter-spacing: 0.75vw;
+  font-size: 5.65vw;
+  background-color: none;
+  animation: blink 0.875s step-end infinite;  
+}
+
+.cursor {
+  display: inline-block;
+  width: .25vw;
+  height: 8vh;
+  margin-left: 2vw;
+  font-family: 'va-light';
+  font-weight: normal;
+  letter-spacing: 0.75vw;
+  font-size: 5.65vw;
+  background-color: none;
+  animation: blink 0.875s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+    border-right: none;
+  }
+  1% {
+    width: 1%;
+    /*border-right: .25vw solid rgb(200, 200, 200);*/
+    border-right: none;
+  }
+  100% {
+    width: 99%;
+    /*border-right: .25vw solid rgb(200, 200, 200);*/
+    border-right: none;
+  }
+}
+
+@font-face {
+  font-family: 'va';
+  src: url('vafont.ttf');
+}
+
+@font-face {
+  font-family: 'va-light';
+  src: url('vafont-light.ttf');
+}
