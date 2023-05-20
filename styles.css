@@ -20,15 +20,16 @@
   white-space: nowrap;
 }
 
-.slash {
-  text-align: center;
+.typewriter-small {
+  text-align: left;
   position: relative;
   font-family: 'va';
   font-weight: bold;
-  letter-spacing: 0.75vw;
-  font-size: 5.65vw;
-  background-color: none;
-  animation: blink 0.875s step-end infinite;  
+  letter-spacing: 0.5vw;
+  font-size: 4vw;
+  animation: typing 1s steps(30, end) forwards; 
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .cursor {
@@ -40,6 +41,19 @@
   font-weight: normal;
   letter-spacing: 0.75vw;
   font-size: 5.65vw;
+  background-color: none;
+  animation: blink 0.875s step-end infinite;
+}
+
+.cursor-small {
+  display: inline-block;
+  width: .25vw;
+  height: 8vh;
+  margin-left: 2vw;
+  font-family: 'va-light';
+  font-weight: normal;
+  letter-spacing: 0.5vw;
+  font-size: 4vw;
   background-color: none;
   animation: blink 0.875s step-end infinite;
 }

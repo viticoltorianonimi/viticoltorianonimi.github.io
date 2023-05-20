@@ -11,35 +11,38 @@
 	</div>
   <script>
   
-  function animatedloop(j) {
+  function animatedloop(j, maxN) {
       const oldText = document.querySelector('.typewriter');
       oldText.addEventListener('animationend', () => {
         setTimeout(() => {
-          const vaText = 'VITICOLTORI ANONIMI /';
           const container = document.querySelector('.container');
-          const newText = document.createElement('vatext');
-          newText.classList.add('typewriter');
-          newText.textContent = vaText;
-
-          const crsr = document.createElement('cursor');
-          const bar = '|';
-          crsr.classList.add('cursor');
-          crsr.textContent = bar;
+          const newText = document.createElement('vatext');   
+          const crsr = document.createElement('cursor');       
+          if (j<maxN) {
+            newText.classList.add('typewriter');
+            newText.textContent = 'VITICOLTORI ANONIMI /';
+            crsr.classList.add('cursor');
+          } else {
+            newText.classList.add('typewriter-small');
+            newText.textContent = '/ info@viticoltorianonimi.it ';
+            crsr.classList.add('cursor-small');
+          }
+          crsr.textContent = '|';
           newText.appendChild(crsr);
           container.removeChild(oldText);
           container.appendChild(newText);
-
-          j++
-          if (j<5) {
-            animatedloop(j);
-          }
+         
+          j++;
+          animatedloop(j, maxN);
+          
         }, 3000);
       });
     }
 
+    let j = 0;
+    let maxN = 2;
+    animatedloop(j, maxN);
 
-    let j = 0
-    animatedloop(j);
   </script>
 
   </body>
